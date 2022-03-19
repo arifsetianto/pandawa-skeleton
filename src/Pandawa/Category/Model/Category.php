@@ -10,9 +10,6 @@ use Pandawa\Component\Ddd\AbstractModel;
  */
 class Category extends AbstractModel
 {
-    /**
-     * @var array
-     */
-    protected $guarded = [];
     protected $table = 'categories';
+    public $timestamps = false;
 }

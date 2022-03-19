@@ -1,0 +1,28 @@
+create_product:
+  constraints:
+    category_id: "required|uuid|exists:categories,id"
+    code: "required|unique:products"
+    name: "required|string"
+    description: "string|nullable"
+    stock: "required|integer"
+    image: "required|string"
+    status: "required|in:draft,published"
+
+single_product:
+  constraints:
+    category: "required|uuid|exists:categories,id"
+
+delete_product:
+  constraints:
+    product: 'required|uuid|exists:products,id'
+
+edit_product:
+  constraints:
+    product: 'required|uuid|exists:products,id'
+    category_id: "uuid|exists:categories,id"
+    code: "unique:products"
+    name: "string"
+    description: "string"
+    stock: "integer"
+    image: "string"
+    status: "in:draft,published"

@@ -10,9 +10,5 @@ use Pandawa\Component\Ddd\AbstractModel;
  */
 class Product extends AbstractModel
 {
-    /**
-     * @var array
-     */
-    protected $guarded = [];
     protected $table = 'products';
 }

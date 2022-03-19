@@ -7,3 +7,7 @@ ping:
 category:
   type: group
   children: _category.yaml
+
+product:
+  type: group
+  children: _product.yaml

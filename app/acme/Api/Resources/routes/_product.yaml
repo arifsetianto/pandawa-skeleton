@@ -1,0 +1,37 @@
+all_products:
+  type: resource
+  path: products
+  only: [index]
+
+get_available:
+  type: message
+  message: get-available-products
+  path: products/available
+  methods: [get]
+
+single_product:
+  type: resource
+  path: products
+  only: [show]
+  rules: [single_product]
+
+create_product:
+  type: message
+  message: create-product
+  path: products
+  methods: [post]
+  rules: [create_product]
+
+delete_product:
+  type: message
+  message: delete-product
+  path: products/{product}
+  methods: [delete]
+  rules: [delete_product]
+
+edit_product:
+  type: message
+  message: edit-product
+  path: products/{product}
+  methods: [patch, put]
+  rules: [edit_product]

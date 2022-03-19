@@ -2,18 +2,32 @@ all_products:
   type: resource
   path: products
   only: [index]
+  options:
+    paginate: true
+    withs:
+      - category
 
 get_available:
   type: message
   message: get-available-products
   path: products/available
   methods: [get]
+  options:
+    paginate: true
+    withs:
+      - category
+
+image:
+  type: presenter
+  presenter: image
+  path: products/image/{product}
+  methods: [get]
 
 single_product:
   type: resource
   path: products
   only: [show]
-  rules: [single_product]
+  rules: [product_id]
 
 create_product:
   type: message
@@ -27,11 +41,11 @@ delete_product:
   message: delete-product
   path: products/{product}
   methods: [delete]
-  rules: [delete_product]
+  rules: [product_id]
 
 edit_product:
   type: message
   message: edit-product
   path: products/{product}
   methods: [patch, put]
-  rules: [edit_product]
+  rules: [product_id, edit_product]

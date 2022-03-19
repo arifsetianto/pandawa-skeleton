@@ -8,17 +8,12 @@ create_product:
     image: "required|string"
     status: "required|in:draft,published"
 
-single_product:
+product_id:
   constraints:
-    category: "required|uuid|exists:categories,id"
-
-delete_product:
-  constraints:
-    product: 'required|uuid|exists:products,id'
+    product: "required|uuid|exists:products,id"
 
 edit_product:
   constraints:
-    product: 'required|uuid|exists:products,id'
     category_id: "uuid|exists:categories,id"
     code: "unique:products"
     name: "string"

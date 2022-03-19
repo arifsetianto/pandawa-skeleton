@@ -10,7 +10,7 @@ use Pandawa\Component\Ddd\RelationshipBehaviorTrait;
 /**
  * @author root
  */
-trait BelongsToCategoryTrait
+trait BelongsToCategory
 {
     use RelationshipBehaviorTrait;
 

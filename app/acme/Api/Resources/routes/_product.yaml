@@ -17,17 +17,17 @@ get_available:
     withs:
       - category
 
-image:
-  type: presenter
-  presenter: image
-  path: products/image/{product}
-  methods: [get]
-
 single_product:
   type: resource
   path: products
   only: [show]
   rules: [product_id]
+
+image:
+  type: presenter
+  presenter: image
+  path: products/{product}/image
+  methods: [get]
 
 create_product:
   type: message

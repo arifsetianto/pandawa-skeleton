@@ -1,0 +1,57 @@
+all_products:
+  type: resource
+  path: products
+  only: [index]
+  options:
+    paginate: true
+    withs:
+      - category
+
+
+get_available:
+  type: message
+  message: available-products
+  path: products/available
+  methods: [get]
+  options:
+    paginate: true
+    withs:
+      - category
+
+
+single_product:
+  type: resource
+  path: products
+  only: [show]
+  rules: [product_id]
+
+
+image:
+  type: presenter
+  presenter: image
+  path: products/{product}/image
+  methods: [get]
+
+
+create_product:
+  type: message
+  message: create-product
+  path: products
+  methods: [post]
+  rules: [create_product]
+
+
+destroy_product:
+  type: message
+  message: destroy-product
+  path: products/{product}
+  methods: [delete]
+  rules: [product_id]
+
+
+edit_product:
+  type: message
+  message: edit-product
+  path: products/{product}
+  methods: [patch, put]
+  rules: [product_id, edit_product]

@@ -27,6 +27,7 @@
             "App\\": "app/laravel",
             "Acme\\Api\\": "app/acme/Api",
             "Acme\\Web\\": "app/acme/Web",
+            "Ecommerce\\Api\\": "app/ecommerce/Api",
             "": "src/"
         }
     },

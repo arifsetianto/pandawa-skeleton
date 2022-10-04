@@ -1,0 +1,6 @@
+create_order:
+    constraints:
+        user: "required|uuid|exists:users,id"
+        name: "required|string"
+        qty: "required|numeric"
+        amount: "required|numeric"

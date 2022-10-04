@@ -1,0 +1,26 @@
+orders:
+    type: resource
+    resource: order
+    path: orders
+    only: [index]
+    options:
+        paginate: true
+        withs:
+            - user
+        
+create_order:
+    type: message
+    message: create-order
+    path: users/{user}/orders
+    methods: [post]
+    rules: ["create_order"]
+    
+find_orders_by_user:
+    type: message
+    message: find-orders-by-user
+    path: users/{user}/orders
+    methods: [get]
+    options:
+        paginate: true
+        withs:
+            - user

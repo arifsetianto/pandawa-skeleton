@@ -1,0 +1,5 @@
+user:
+    constraints:
+        name: "required|string"
+        email: "required|string"
+        phone: "required|string"

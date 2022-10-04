@@ -1,0 +1,12 @@
+users:
+    type: resource
+    resource: user
+    path: users
+    rules: ["user"]
+    options:
+        paginate: true
+        specs:
+            index:
+                - name: user-keyword
+                  arguments: [keyword]
+    
